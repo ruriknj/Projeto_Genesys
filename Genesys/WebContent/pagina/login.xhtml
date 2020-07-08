@@ -1,0 +1,43 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+<h:outputStylesheet library="style" name="grid.css"  />
+</h:head>
+
+
+<h:body>
+
+	<h:form>
+	
+		<h:outputLink value="javascript:void(0)" onclick="PF('dlg').show();"
+			title="login">
+			<p:graphicImage library="images" name="Login1.png"/>
+		</h:outputLink>
+		
+		<p:growl id="growl" sticky="false" showDetail="true" life="3000" />
+		
+		<p:dialog header="Login" widgetVar="dlg" resizable="false" 
+				  style ="background-color: #3399CC">
+			<h:panelGrid columns="2" cellpadding="5">
+				<h:outputLabel for="username" value="Email:" />
+				<p:inputText id="username" value="#{Login.emailAdm}" required="true"
+					label="username" />
+
+				<h:outputLabel for="password" value="Senha:" />
+				<p:password id="password" value="#{Login.senhaAdm}" required="true"
+					label="password" />
+
+				<f:facet name="footer">
+					<p:commandButton value="Login" update="growl" icon="ui-icon-search"
+						action="#{Login.login}"/>
+						<p:commandButton value="Criar usuário" icon="ui-icon-search"
+										 action ="#{Login.cadastroUsuario}" />
+				</f:facet>
+			</h:panelGrid>
+		</p:dialog>
+	</h:form>
+</h:body>
+</html>
