@@ -8,6 +8,10 @@
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		
 		<class>entidade.Usuario</class>
+		<class>entidade.Pedido</class>
+		<class>entidade.Sorvete</class>
+		<class>entidade.Sabor</class>
+		<class>entidade.Calda</class>
 		
 		<properties>
 			<property name="javax.persistence.jdbc.url" 
